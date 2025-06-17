@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gin | Portfolio</title>
+  <style>
+    /* CSS layout tetap seperti sebelumnya */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      background: #333;
+      margin: 4px 0;
+      width: 25px;
+      transition: all 0.3s ease;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #007bff;
+    }
+
+    .container {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .portfolio-item {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .portfolio-item img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    .action-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .action-button:hover {
+      background: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+
+      .show-menu nav {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Gin</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+    </nav>
+  </header>
+
+  <section class="container" id="home">
+    <h2>Selamat Datang</h2>
+    <p>Selamat datang di portofolio saya. Saya adalah kreator visual dan pengembang konsep karakter yang berfokus pada dunia kreatif, visual branding, dan game experience seperti Roblox.</p>
+  </section>
+
+  <section class="container" id="about">
+    <h2>Tentang Saya</h2>
+    <p>Saya adalah Gin, mahasiswa desain yang memiliki ketertarikan dalam menciptakan karakter orisinal, kisah mitologi, dan visual storytelling. Dengan latar belakang pengalaman di berbagai proyek kreatif, saya terus mengeksplorasi identitas visual yang kuat dan bermakna.</p>
+  </section>
+
+  <section class="container" id="portfolio">
+    <h2>Proyek Terbaru</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="/mnt/data/banteng wulung.png" alt="Banteng Wulung">
+        <h3>Banteng Wulung (Villain Design)</h3>
+        <a href="/mnt/data/DK 201 Aditya G 4 Villain.pdf" class="action-button" target="_blank">Lihat PDF</a>
+      </div>
+      <div class="portfolio-item">
+        <img src="/mnt/data/vigor sang singa.png" alt="Vigor Sang Singa">
+        <h3>Vigor Sang Singa (Maskot Olahraga)</h3>
+        <a href="/mnt/data/DK 201 Aditya G 2.pdf" class="action-button" target="_blank">Lihat PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('header').classList.toggle('show-menu');
+    }
+  </script>
+</body>
+</html>
